@@ -1,10 +1,11 @@
 {
   "Язык": "English",
+  "Короткий язык": "En",
   "Страница не найдена": "Page not found",
   "Произошла непредвиденная ошибка": "An unexpected error has occurred",
   "Обновить страницу": "Reload page",
   "throw error": "throw error",
-  "Главная страница": "Main page",
+  "Главная": "Main page",
   "О сайте": "About us",
   "toggle": "toggle"
 }
