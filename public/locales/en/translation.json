@@ -7,5 +7,7 @@
   "throw error": "throw error",
   "Главная": "Main page",
   "О сайте": "About us",
-  "toggle": "toggle"
+  "toggle": "toggle",
+  "increment": "increment",
+  "decrement": "decrement"
 }
