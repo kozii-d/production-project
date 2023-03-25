@@ -23,8 +23,6 @@
   padding: 20px;
   border-radius: 12px;
   background: var(--bg-color);
-  transition: 0.3s transform;
-  transform: scale(0.5);
   max-width: 60%;
 }
 
@@ -34,12 +32,32 @@
   z-index: var(--modal-z-index);
 
   .content {
-    transform: scale(1);
+    animation: open-modal 0.5s forwards 1;
   }
 }
 
 .isClosing {
   .content {
-    transform: scale(0.2);
+    animation: close-modal 0.5s forwards 1;
+  }
+}
+
+@keyframes open-modal {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes close-modal {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
   }
 }

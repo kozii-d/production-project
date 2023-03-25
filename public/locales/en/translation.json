@@ -9,5 +9,8 @@
   "О сайте": "About us",
   "toggle": "toggle",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "Войти": "Sign in",
+  "Введите логин": "Enter username",
+  "Введите пароль": "Enter password"
 }

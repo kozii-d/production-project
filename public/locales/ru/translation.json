@@ -9,5 +9,8 @@
   "О сайте": "О сайте",
   "toggle": "toggle",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "Войти": "Войти",
+  "Введите логин": "Введите логин",
+  "Введите пароль": "Введите пароль"
 }
