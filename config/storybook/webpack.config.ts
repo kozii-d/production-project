@@ -10,10 +10,10 @@ export default ({ config }: {config: webpack.Configuration}) => {
     entry: "",
     src: path.resolve(__dirname, "..", "..", "src"),
   };
-  // config.resolve.modules.unshift(paths.src);
-  config.resolve.modules.push(paths.src);
+  // использую unshift вместо пуша для того, чтобы в сторисах изначально пакеты искались в файлах проекта,
+  // а уже только после в node_modules. Это нужно из-за того, что в модулях есть папка entities
+  config.resolve.modules.unshift(paths.src);
   config.resolve.extensions.push(".ts", ".tsx");
-
   // eslint-disable-next-line no-param-reassign
   config.module.rules = config.module.rules.map((rule: webpack.RuleSetRule) => {
     if (/svg/.test(rule.test as string)) {
@@ -27,6 +27,10 @@ export default ({ config }: {config: webpack.Configuration}) => {
     use: ["@svgr/webpack"],
   });
   config.module.rules.push(buildCssLoader(true));
+
+  config.plugins.push(new webpack.DefinePlugin({
+    __IS_DEV__: true,
+  }));
 
   return config;
 };
