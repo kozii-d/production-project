@@ -15,5 +15,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Дмитрий",
+    "lastname": "Козий",
+    "age": 22,
+    "currency": "UAH",
+    "country": "Ukraine",
+    "city": "Zaporizhzhya",
+    "username": "admin",
+    "avatar": ""
+  }
 }

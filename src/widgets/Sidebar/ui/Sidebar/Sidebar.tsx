@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { memo, useState } from "react";
 
 import { classNames } from "shared/lib/classNames/classNames";
 
@@ -7,21 +6,15 @@ import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
 
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
-import { RoutePath } from "shared/config/routeConfig";
-
-import AboutIcon from "shared/assets/icons/about.svg";
-import MainIcon from "shared/assets/icons/main.svg";
-
+import { SidebarItemsList } from "../../model/iItems";
+import { SidebarItem } from "../SidebarItem/SidebarItem";
 import cls from "./Sidebar.module.scss";
 
 interface SidebarProps {
   className?: string;
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
-  const { t } = useTranslation();
-
+export const Sidebar = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
 
   const onToggle = () => {
@@ -42,22 +35,13 @@ export const Sidebar = ({ className }: SidebarProps) => {
         {collapsed ? ">" : "<"}
       </Button>
       <div className={cls.items}>
-        <AppLink
-          theme={AppLinkTheme.SECONDARY}
-          to={RoutePath.main}
-          className={cls.item}
-        >
-          <MainIcon className={cls.icon} />
-          <span className={cls.link}>{t("Главная")}</span>
-        </AppLink>
-        <AppLink
-          theme={AppLinkTheme.SECONDARY}
-          to={RoutePath.about}
-          className={cls.item}
-        >
-          <AboutIcon className={cls.icon} />
-          <span className={cls.link}>{t("О сайте")}</span>
-        </AppLink>
+        {SidebarItemsList.map((item) => (
+          <SidebarItem
+            key={item.path}
+            item={item}
+            collapsed={collapsed}
+          />
+        ))}
       </div>
       <div className={cls.switchers}>
         <ThemeSwitcher />
@@ -65,4 +49,4 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </div>
     </div>
   );
-};
+});
