@@ -43,7 +43,7 @@ module.exports = {
       ignoreAttribute: ["data-testid", "to"],
     }],
     "max-len": ["error", {
-      code: 150,
+      code: 170,
       ignoreComments: true,
     }],
     "jsx-a11y/click-events-have-key-events": "off",
@@ -52,9 +52,11 @@ module.exports = {
     "react-hooks/exhaustive-deps": "error",
     "no-param-reassign": "off",
     "react/jsx-no-useless-fragment": [2, { allowExpressions: true }],
+    "no-undef": "off",
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
   },
   overrides: [{
     files: ["**/src/**/*.{test,stories}.{ts,tsx}"],

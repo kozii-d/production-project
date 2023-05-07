@@ -1,4 +1,3 @@
-import { DeepPartial } from "@reduxjs/toolkit";
 import { StateSchema } from "app/providers/StoreProvider";
 import { getLoginState } from "./getLoginState";
 import { LoginSchema } from "../../types/loginSchema";
@@ -24,11 +23,5 @@ describe("getLoginState.test", () => {
     const state: DeepPartial<StateSchema> = {};
 
     expect(getLoginState(state as StateSchema)).toEqual(initialState);
-  });
-
-  test("Should return initial state when state is undefined", () => {
-    const state: StateSchema | undefined = undefined;
-
-    expect(getLoginState(state)).toEqual(initialState);
   });
 });

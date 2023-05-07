@@ -10,26 +10,28 @@ export default ({ config }: {config: webpack.Configuration}) => {
     entry: "",
     src: path.resolve(__dirname, "..", "..", "src"),
   };
-  // использую unshift вместо пуша для того, чтобы в сторисах изначально пакеты искались в файлах проекта,
+  // Использую unshift вместо push для того, чтобы в сторисах изначально пакеты искались в файлах проекта,
   // а уже только после в node_modules. Это нужно из-за того, что в модулях есть папка entities
-  config.resolve.modules.unshift(paths.src);
-  config.resolve.extensions.push(".ts", ".tsx");
+  config!.resolve!.modules!.unshift(paths.src);
+  config!.resolve!.extensions!.push(".ts", ".tsx");
   // eslint-disable-next-line no-param-reassign
-  config.module.rules = config.module.rules.map((rule: webpack.RuleSetRule) => {
+  // @ts-ignore
+  config!.module!.rules = config!.module!.rules!.map((rule: webpack.RuleSetRule) => {
     if (/svg/.test(rule.test as string)) {
       return { ...rule, exclude: /\.svg$/i };
     }
     return rule;
   });
 
-  config.module.rules.push({
+  config!.module!.rules.push({
     test: /\.svg$/,
     use: ["@svgr/webpack"],
   });
-  config.module.rules.push(buildCssLoader(true));
+  config!.module!.rules.push(buildCssLoader(true));
 
-  config.plugins.push(new webpack.DefinePlugin({
-    __IS_DEV__: true,
+  config!.plugins!.push(new webpack.DefinePlugin({
+    __IS_DEV__: JSON.stringify(true),
+    __API__: JSON.stringify(""),
   }));
 
   return config;

@@ -5,8 +5,13 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import { BuildOptions } from "./types/config";
 
-export function buildPlugins({ paths, isDev, analyze }: BuildOptions): webpack.WebpackPluginInstance[] {
-  return [
+export function buildPlugins({
+  paths,
+  isDev = true,
+  analyze = false,
+  apiUrl,
+}: BuildOptions): webpack.WebpackPluginInstance[] {
+  const plugins: webpack.WebpackPluginInstance[] = [
     new HTMLWebpackPlugin({
       template: paths.html,
     }),
@@ -17,10 +22,25 @@ export function buildPlugins({ paths, isDev, analyze }: BuildOptions): webpack.W
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
+      __API__: JSON.stringify(apiUrl),
     }),
-    isDev && new ReactRefreshPlugin({ overlay: false }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: analyze ? "server" : "disabled",
-    }),
-  ].filter(Boolean);
+  ];
+
+  if (isDev) {
+    plugins.push(
+      new ReactRefreshPlugin({
+        overlay: false,
+      }) as webpack.WebpackPluginInstance,
+    );
+  }
+
+  if (analyze) {
+    plugins.push(
+      new BundleAnalyzerPlugin({
+        analyzerMode: "server",
+      }),
+    );
+  }
+
+  return plugins;
 }

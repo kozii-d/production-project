@@ -11,9 +11,11 @@ export function useTheme(): UseThemeResult {
 
   const toggleTheme = () => {
     const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
-    setTheme(newTheme);
+    // Запись через ?. нужна из-за того, что контекст инициализируется не сразу
+    // и в какой-то момент у нас может просто не быть функции ыуеЕруьу
+    setTheme?.(newTheme);
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
 
-  return { theme, toggleTheme };
+  return { theme: theme || Theme.LIGHT, toggleTheme };
 }

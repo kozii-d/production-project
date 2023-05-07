@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { memo, useCallback } from "react";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Text, TextTheme } from "shared/ui/Text/Text";
-import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
 import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
 import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
@@ -22,7 +22,7 @@ export interface LoginFormProps {
 }
 
 // Объект вне компонента, чтобы он каждый раз при рендере не создавался
-const initialReducers: ReducersList = {
+const initialReducers: ReducerList = {
   loginForm: loginReducer,
 };
 
