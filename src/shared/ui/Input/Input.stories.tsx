@@ -15,8 +15,8 @@ export default {
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
-export const Normal = Template.bind({});
-Normal.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   placeholder: "Placeholder text",
   value: "some value text",
 };
@@ -28,3 +28,19 @@ Dark.args = {
 };
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const PrimaryReadonly = Template.bind({});
+PrimaryReadonly.args = {
+  placeholder: "Placeholder text",
+  value: "some value text",
+  readonly: true,
+};
+
+export const DarkReadonly = Template.bind({});
+DarkReadonly.args = {
+  placeholder: "Placeholder text",
+  value: "some value text",
+  readonly: true,
+};
+
+DarkReadonly.decorators = [ThemeDecorator(Theme.DARK)];

@@ -2,7 +2,7 @@ import { LoginSchema } from "../types/loginSchema";
 import { initialState, loginActions, loginReducer } from "./loginSlice";
 import { loginByUsername } from "../services/loginByUsername/loginByUsername";
 
-describe("loginSlice reducer", () => {
+describe("loginSlice", () => {
   test("should return the initial state", () => {
     expect(loginReducer(undefined, { type: "unknown" })).toEqual(initialState);
   });

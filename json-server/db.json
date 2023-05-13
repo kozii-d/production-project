@@ -1,12 +1,32 @@
 {
   "posts": [
-    { "id": "1", "title": "json-server 1", "author": "typicode" },
-    { "id": "2", "title": "json-server 2", "author": "typicode" },
-    { "id": "3", "title": "json-server 3", "author": "typicode" },
-    { "id": "4", "title": "json-server 4", "author": "typicode" }
+    {
+      "id": "1",
+      "title": "json-server 1",
+      "author": "typicode"
+    },
+    {
+      "id": "2",
+      "title": "json-server 2",
+      "author": "typicode"
+    },
+    {
+      "id": "3",
+      "title": "json-server 3",
+      "author": "typicode"
+    },
+    {
+      "id": "4",
+      "title": "json-server 4",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": "1", "body": "some comment", "postId": "1" }
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
   ],
   "users": [
     {
@@ -18,11 +38,11 @@
   "profile": {
     "first": "Дмитрий",
     "lastname": "Козий",
-    "age": 22,
+    "age": 20,
     "currency": "UAH",
     "country": "Ukraine",
     "city": "Zaporizhzhya",
     "username": "admin",
-    "avatar": ""
+    "avatar": "https://avatarfiles.alphacoders.com/280/280985.png"
   }
 }
