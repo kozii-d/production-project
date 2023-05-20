@@ -10,9 +10,23 @@ export function useTheme(): UseThemeResult {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const toggleTheme = () => {
-    const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
+    let newTheme: Theme;
+    switch (theme) {
+    case Theme.DARK:
+      newTheme = Theme.LIGHT;
+      break;
+    case Theme.LIGHT:
+      newTheme = Theme.ORANGE;
+      break;
+    case Theme.ORANGE:
+      newTheme = Theme.DARK;
+      break;
+    default:
+      newTheme = Theme.LIGHT;
+    }
+
     // Запись через ?. нужна из-за того, что контекст инициализируется не сразу
-    // и в какой-то момент у нас может просто не быть функции ыуеЕруьу
+    // и в какой-то момент у нас может просто не быть функции setTheme
     setTheme?.(newTheme);
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
