@@ -9,17 +9,17 @@ export function buildBabelLoader({ isDev }: BuildOptions) {
       options: {
         presets: ["@babel/preset-env"],
         plugins: [
-          [
-            // "i18next-extract",
-            // {
-            //   locales: ["ru", "en"],
-            //   keyAsDefaultValue: true,
-            //   saveMissing: true,
-            //   outputPath: "public/locales/{{locale}}/{{ns}}.json",
-            // },
-            isDev && require.resolve("react-refresh/babel"),
-          ].filter(Boolean),
-        ],
+          // [
+          // "i18next-extract",
+          // {
+          //   locales: ["ru", "en"],
+          //   keyAsDefaultValue: true,
+          //   saveMissing: true,
+          //   outputPath: "public/locales/{{locale}}/{{ns}}.json",
+          // },
+          // ],
+          isDev && require.resolve("react-refresh/babel"),
+        ].filter(Boolean),
       },
     },
   };
