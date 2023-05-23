@@ -3,7 +3,9 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
-import { Text, TextTheme } from "./Text";
+import {
+  Text, TextAlign, TextSize, TextTheme,
+} from "./Text";
 
 export default {
   title: "shared/Text",
@@ -46,6 +48,41 @@ WithTitleOnlyDark.args = {
   title: "Title",
 };
 WithTitleOnlyDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const WithRightAlignment = Template.bind({});
+WithRightAlignment.args = {
+  title: "Title",
+  text: "This text is aligned to the right.",
+  align: TextAlign.RIGHT,
+};
+
+export const WithCenterAlignment = Template.bind({});
+WithCenterAlignment.args = {
+  title: "Title",
+  text: "This text is centered.",
+  align: TextAlign.CENTER,
+};
+
+export const WithLargeTextSize = Template.bind({});
+WithLargeTextSize.args = {
+  title: "Title",
+  text: "This text has a large size.",
+  size: TextSize.L,
+};
+
+export const WithMediumTextSize = Template.bind({});
+WithMediumTextSize.args = {
+  title: "Title",
+  text: "This text has a medium size.",
+  size: TextSize.M,
+};
+
+export const WithTitleTextDark = Template.bind({});
+WithTitleTextDark.args = {
+  title: "Title",
+  text: "This is some text.",
+};
+WithTitleTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const WithErrorTheme = Template.bind({});
 WithErrorTheme.args = {
