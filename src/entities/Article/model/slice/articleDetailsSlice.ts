@@ -32,7 +32,6 @@ export const articleDetailsSlice = createSlice({
       state.error = action.payload;
     });
   },
-
 });
 
 export const { actions: articleDetailsActions } = articleDetailsSlice;

@@ -117,13 +117,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://avatarfiles.alphacoders.com/280/280985.png"
     },
     {
-      "id": "1",
+      "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://avatarfiles.alphacoders.com/280/280985.png"
     }
   ],
   "profile": {
