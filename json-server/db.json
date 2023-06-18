@@ -23,13 +23,15 @@
   ],
   "articles": [
     {
-      "id":  "1",
+      "id": "1",
       "title": "JavaScript news",
       "subtitle": "Что нового в JS за 2023 год?",
       "img": "https://res.cloudinary.com/practicaldev/image/fetch/s--sqXFkEvv--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1920px-Unofficial_JavaScript_logo_2.svg.png",
       "views": 1022,
       "createdAt": "21.05.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -110,6 +112,108 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "baeG817"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "321",
+      "id": "1l66sJB"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "hello world",
+      "id": "2_fedmS"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "123123",
+      "id": "5P0Vb21"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "333",
+      "id": "m7AXHgP"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "1",
+      "id": "WtZx9Yj"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "123",
+      "id": "5skteJ3"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "12312312",
+      "id": "g2kCl1Q"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "123",
+      "id": "55IgXEU"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "312",
+      "id": "5RpVvVC"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "123",
+      "id": "ucLN-FE"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "12123123123123123",
+      "id": "Hzg93a9"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "123123",
+      "id": "UAMTDmj"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "12312",
+      "id": "dpd_VAo"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "123",
+      "id": "D8QgFzy"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "123123",
+      "id": "UukoAVy"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "312",
+      "id": "V8m_M9T"
     }
   ],
   "users": [
@@ -128,14 +232,28 @@
       "avatar": "https://avatarfiles.alphacoders.com/280/280985.png"
     }
   ],
-  "profile": {
-    "first": "Дмитрий",
-    "lastname": "Козий",
-    "age": 20,
-    "currency": "UAH",
-    "country": "Ukraine",
-    "city": "Zaporizhzhya",
-    "username": "admin",
-    "avatar": "https://avatarfiles.alphacoders.com/280/280985.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Дмитрий",
+      "lastname": "Козий",
+      "age": 20,
+      "currency": "UAH",
+      "country": "Ukraine",
+      "city": "Zaporizhzhya",
+      "username": "admin",
+      "avatar": "https://avatarfiles.alphacoders.com/280/280985.png"
+    },
+    {
+      "id": "2",
+      "first": "Не Дмитрий1",
+      "lastname": "Не Козий",
+      "age": 20,
+      "currency": "UAH",
+      "country": "Ukraine",
+      "city": "Zaporizhzhya",
+      "username": "user",
+      "avatar": "https://avatarfiles.alphacoders.com/280/280985.png"
+    }
+  ]
 }

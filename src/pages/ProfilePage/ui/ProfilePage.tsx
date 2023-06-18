@@ -15,13 +15,15 @@ import {
   ProfileCard,
   profileReducer,
 } from "entities/Profile";
-import { memo, useCallback, useEffect } from "react";
+import { memo, useCallback } from "react";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
 import { ValidateProfileError } from "entities/Profile/model/types/profile";
 import { useTranslation } from "react-i18next";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useParams } from "react-router-dom";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 const reducers: ReducerList = {
@@ -34,6 +36,7 @@ interface ProfilePageProps {
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
   const { t } = useTranslation("profile");
+  const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
 
   const formData = useSelector(getProfileForm);
@@ -109,14 +112,14 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     [dispatch],
   );
 
-  useEffect(() => {
-    if (__PROJECT__ !== "storybook") {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers}>
       <div className={classNames("", {}, [className])}>
         <ProfilePageHeader />
         {validateErrors?.length

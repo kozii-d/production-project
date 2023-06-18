@@ -3,5 +3,6 @@ import { EntityState } from "@reduxjs/toolkit";
 
 export interface ArticleDetailsCommentsSchema extends EntityState<Comment> {
   isLoading?: boolean;
+  isAdding?: boolean
   error?: string;
 }

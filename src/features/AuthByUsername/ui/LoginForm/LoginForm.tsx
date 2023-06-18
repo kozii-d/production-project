@@ -7,7 +7,10 @@ import { useSelector } from "react-redux";
 import { memo, useCallback } from "react";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Text, TextTheme } from "shared/ui/Text/Text";
-import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import {
+  DynamicModuleLoader,
+  ReducerList,
+} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
 import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
 import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
@@ -35,13 +38,19 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const isLoading = useSelector(getLoginIsLoading);
   const error = useSelector(getLoginError);
 
-  const handleChangeUsername = useCallback((value: string) => {
-    dispatch(loginActions.setUsername(value));
-  }, [dispatch]);
+  const handleChangeUsername = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setUsername(value));
+    },
+    [dispatch],
+  );
 
-  const handleChangePassword = useCallback((value: string) => {
-    dispatch(loginActions.setPassword(value));
-  }, [dispatch]);
+  const handleChangePassword = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setPassword(value));
+    },
+    [dispatch],
+  );
 
   const handleLoginClick = useCallback(async () => {
     const result = await dispatch(loginByUsername({ username, password }));
@@ -51,13 +60,15 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   }, [dispatch, onSuccess, password, username]);
 
   return (
-    <DynamicModuleLoader
-      reducers={initialReducers}
-      removeAfterUnmount
-    >
+    <DynamicModuleLoader reducers={initialReducers}>
       <div className={classNames(cls.loginForm, {}, [className])}>
         <Text title={t("Форма авторизации")} />
-        {error && <Text theme={TextTheme.ERROR} text={t("Вы ввели неверный логин или пароль")} />}
+        {error && (
+          <Text
+            theme={TextTheme.ERROR}
+            text={t("Вы ввели неверный логин или пароль")}
+          />
+        )}
         <Input
           className={cls.input}
           placeholder={t("Введите логин")}

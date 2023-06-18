@@ -5,7 +5,8 @@ import {
 } from "@reduxjs/toolkit";
 import { Comment } from "entities/Comment";
 import { StateSchema } from "app/providers/StoreProvider";
-import { fetchCommentsByArticleId } from "pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { fetchCommentsByArticleId } from "../services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { addCommentForArticle } from "../services/addCommentForArticle/addCommentForArticle";
 import { ArticleDetailsCommentsSchema } from "../types/ArticleDetailsCommentsSchema";
 
 const commentsAdapter = createEntityAdapter<Comment>({
@@ -18,6 +19,7 @@ export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
 
 export const initialState = commentsAdapter.getInitialState<ArticleDetailsCommentsSchema>({
   isLoading: false,
+  isAdding: false,
   error: undefined,
   ids: [],
   entities: {},
@@ -42,6 +44,18 @@ const articleDetailsCommentsSlice = createSlice({
     builder.addCase(fetchCommentsByArticleId.rejected, (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
+    });
+    builder.addCase(addCommentForArticle.pending, (state) => {
+      state.isAdding = true;
+    });
+    builder.addCase(
+      addCommentForArticle.fulfilled,
+      (state) => {
+        state.isAdding = false;
+      },
+    );
+    builder.addCase(addCommentForArticle.rejected, (state) => {
+      state.isAdding = false;
     });
   },
 });
