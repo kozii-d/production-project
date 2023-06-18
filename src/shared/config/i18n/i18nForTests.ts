@@ -13,6 +13,9 @@ i18n
     },
 
     resources: { ru: { translations: {} } },
+    react: {
+      useSuspense: false,
+    },
   });
 
 export default i18n;
