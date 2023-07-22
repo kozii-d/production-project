@@ -22,5 +22,8 @@
   "Выберите страну": "Select country",
   "Комментарии отсутствуют": "No comments",
   "Введите текст комментария": "Enter comment text",
-  "Отправить": "Send"
+  "Отправить": "Send",
+  "Читать далее...": "Read more...",
+  "При загрузке статьи произошла ошибка.": "An error occurred while loading the article."
+
 }

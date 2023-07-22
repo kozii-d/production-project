@@ -26,6 +26,10 @@ const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDe
 
 const article: Article = {
   id: "1",
+  user: {
+    id: "1",
+    username: "kozii",
+  },
   title: "JavaScript news",
   subtitle: "Что нового в JS за 2023 год?",
   img: "https://res.cloudinary.com/practicaldev/image/fetch/s--sqXFkEvv--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1920px-Unofficial_JavaScript_logo_2.svg.png",

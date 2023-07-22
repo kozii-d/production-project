@@ -1,33 +1,27 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "app/providers/ThemeProvider";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import { Article } from "entities/Article";
+import { ArticleListItem } from "./ArticleListItem";
 import {
-  ArticleBlockType,
-  ArticleType,
-} from "entities/Article/model/types/article";
-import { ArticleDetails } from "./ArticleDetails";
+  Article, ArticleBlockType, ArticleType, ArticleView,
+} from "../../model/types/article";
 
 export default {
-  title: "entities/ArticleDetails",
-  component: ArticleDetails,
+  title: "entities/Article/ArticleListItem",
+  component: ArticleListItem,
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} as ComponentMeta<typeof ArticleDetails>;
+} as ComponentMeta<typeof ArticleListItem>;
 
-const Template: ComponentStory<typeof ArticleDetails> = (args) => (
-  <ArticleDetails {...args} />
-);
+const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
 
 const article: Article = {
   id: "1",
   user: {
     id: "1",
     username: "kozii",
+    avatar: "https://fatuidb.icu/images/upload/goro",
   },
   title: "JavaScript news",
   subtitle: "Что нового в JS за 2023 год?",
@@ -97,76 +91,14 @@ const article: Article = {
   ],
 };
 
-export const Primary = Template.bind({});
-Primary.args = {};
-Primary.decorators = [
-  StoreDecorator({
-    articleDetails: {
-      data: article,
-    },
-  }),
-];
+export const Big = Template.bind({});
+Big.args = {
+  view: ArticleView.BIG,
+  article,
+};
 
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [
-  StoreDecorator({
-    articleDetails: {
-      data: article,
-    },
-  }),
-  ThemeDecorator(Theme.DARK),
-];
-
-export const Orange = Template.bind({});
-Orange.args = {};
-Orange.decorators = [
-  StoreDecorator({
-    articleDetails: {
-      data: article,
-    },
-  }),
-  ThemeDecorator(Theme.ORANGE),
-];
-
-export const Loading = Template.bind({});
-Loading.args = {};
-Loading.decorators = [
-  StoreDecorator({
-    articleDetails: {
-      isLoading: true,
-    },
-  }),
-];
-
-export const LoadingDark = Template.bind({});
-LoadingDark.args = {};
-LoadingDark.decorators = [
-  StoreDecorator({
-    articleDetails: {
-      isLoading: true,
-    },
-  }),
-  ThemeDecorator(Theme.DARK),
-];
-
-export const Error = Template.bind({});
-Error.args = {};
-Error.decorators = [
-  StoreDecorator({
-    articleDetails: {
-      error: "error",
-    },
-  }),
-];
-
-export const ErrorDark = Template.bind({});
-ErrorDark.args = {};
-ErrorDark.decorators = [
-  StoreDecorator({
-    articleDetails: {
-      error: "error",
-    },
-  }),
-  ThemeDecorator(Theme.DARK),
-];
+export const Small = Template.bind({});
+Small.args = {
+  view: ArticleView.SMALL,
+  article,
+};

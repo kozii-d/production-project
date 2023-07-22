@@ -16,7 +16,6 @@ import {
 } from "../../model/slices/addCommentFormSlice";
 import cls from "./AddCommentForm.module.scss";
 import {
-  getAddCommentFormError,
   getAddCommentFormText,
 } from "../../model/selectors/addCommentFormSelector";
 
@@ -36,7 +35,6 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
   const dispatch = useAppDispatch();
 
   const text = useSelector(getAddCommentFormText);
-  const error = useSelector(getAddCommentFormError);
 
   const handleCommentTextChange = useCallback(
     (value: string) => {
