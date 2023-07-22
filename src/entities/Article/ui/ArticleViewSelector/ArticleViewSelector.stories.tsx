@@ -6,7 +6,7 @@ import { Theme } from "app/providers/ThemeProvider";
 import { ArticleViewSelector } from "./ArticleViewSelector";
 
 export default {
-  title: "unselected/ArticleViewSelector",
+  title: "entities/Article/ArticleViewSelector",
   component: ArticleViewSelector,
   argTypes: {
     backgroundColor: { control: "color" },
@@ -24,3 +24,8 @@ export const Dark = Template.bind({});
 Dark.args = {
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Orange = Template.bind({});
+Orange.args = {
+};
+Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

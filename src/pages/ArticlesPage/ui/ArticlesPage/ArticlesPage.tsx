@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 
-import { memo, useCallback } from "react";
+import { useCallback } from "react";
 import { ArticleList, ArticleView, ArticleViewSelector } from "entities/Article";
 import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
@@ -47,4 +47,4 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   );
 };
 
-export default memo(ArticlesPage);
+export default ArticlesPage;

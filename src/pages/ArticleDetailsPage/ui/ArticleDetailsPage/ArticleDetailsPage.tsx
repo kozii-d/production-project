@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 
 import {
-  memo, Suspense, useCallback,
+  Suspense, useCallback,
 } from "react";
 import { ArticleDetails } from "entities/Article";
 import { useNavigate, useParams } from "react-router-dom";
@@ -100,4 +100,4 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   );
 };
 
-export default memo(ArticleDetailsPage);
+export default ArticleDetailsPage;

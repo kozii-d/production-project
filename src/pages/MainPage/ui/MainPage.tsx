@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 const MainPage = () => {
@@ -11,4 +11,4 @@ const MainPage = () => {
   );
 };
 
-export default memo(MainPage);
+export default MainPage;

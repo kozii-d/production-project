@@ -15,7 +15,7 @@ import {
   ProfileCard,
   profileReducer,
 } from "entities/Profile";
-import { memo, useCallback } from "react";
+import { useCallback } from "react";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
 import { Currency } from "entities/Currency";
@@ -145,4 +145,4 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   );
 };
 
-export default memo(ProfilePage);
+export default ProfilePage;
