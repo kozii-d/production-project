@@ -1,6 +1,8 @@
 import { Country } from "entities/Country";
-import { validateProfileData } from "./validateProfileData";
+
 import { Profile, ValidateProfileError } from "../../types/profile";
+
+import { validateProfileData } from "./validateProfileData";
 
 describe("validateProfileData", () => {
   test("should return an error if no profile data is provided", () => {

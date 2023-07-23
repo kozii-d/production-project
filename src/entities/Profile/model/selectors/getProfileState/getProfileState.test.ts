@@ -1,7 +1,10 @@
-import { StateSchema } from "app/providers/StoreProvider";
 import { ProfileSchema } from "entities/Profile";
-import { getProfileState } from "./getProfileState";
+
+import { StateSchema } from "app/providers/StoreProvider";
+
 import { initialState } from "../../slice/initialState";
+
+import { getProfileState } from "./getProfileState";
 
 describe("getProfileState", () => {
   test("Should return profile state from state", () => {

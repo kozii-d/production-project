@@ -1,6 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { User, userActions } from "entities/User";
+
 import { USER_LOCALSTORAGE_KEY } from "shared/const/localStorage";
+
+import { User, userActions } from "entities/User";
+
 import { ThunkConfig } from "app/providers/StoreProvider";
 
 export interface LoginByUsernameProps {

@@ -13,7 +13,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "i18next", "react-hooks"],
+  plugins: ["react", "@typescript-eslint", "i18next", "react-hooks", "eslint-plugin-import-helpers"],
   rules: {
     quotes: [2, "double", {
       avoidEscape: true,
@@ -54,6 +54,30 @@ module.exports = {
     "react/jsx-no-useless-fragment": [2, { allowExpressions: true }],
     "no-undef": "off",
     "react/no-array-index-key": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        newlinesBetween: "always",
+        alphabetize: {
+          order: "asc",
+          ignoreCase: false,
+        },
+        groups: [
+          ["/^react$/", "/^react-dom$/"],
+          "module",
+          "/^shared\\//",
+          "/^entities\\//",
+          "/^features\\//",
+          "/^widgets\\//",
+          "/^pages\\//",
+          "/^processes\\//",
+          "/^app\\//",
+          "parent",
+          "sibling",
+          "index",
+        ],
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,

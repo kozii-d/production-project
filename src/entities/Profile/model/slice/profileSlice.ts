@@ -1,8 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { initialState } from "./initialState";
-import { Profile } from "../types/profile";
+
 import { fetchProfileData } from "../service/fetchProfileData/fetchProfileData";
 import { updateProfileData } from "../service/updateProfileData/updateProfileData";
+import { Profile } from "../types/profile";
+
+import { initialState } from "./initialState";
 
 export const profileSlice = createSlice({
   name: "profile",

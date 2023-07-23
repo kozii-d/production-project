@@ -1,9 +1,10 @@
-import { classNames } from "shared/lib/classNames/classNames";
-
-import { Modal } from "shared/ui/Modal/Modal";
 import { Suspense, useCallback } from "react";
+
+import { classNames } from "shared/lib/classNames/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Loader } from "shared/ui/Loader/Loader";
+import { Modal } from "shared/ui/Modal/Modal";
+
 import { loginActions } from "../../model/slice/loginSlice";
 import { LoginFormAsync } from "../LoginForm/LoginForm.async";
 

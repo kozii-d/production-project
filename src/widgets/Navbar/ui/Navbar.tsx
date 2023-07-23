@@ -1,12 +1,16 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { memo, useCallback, useState } from "react";
 
 import { useTranslation } from "react-i18next";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { memo, useCallback, useState } from "react";
-import { LoginModal } from "features/AuthByUsername";
 import { useSelector } from "react-redux";
-import { getUserAuthData, userActions } from "entities/User";
+
+import { classNames } from "shared/lib/classNames/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Button, ButtonTheme } from "shared/ui/Button/Button";
+
+import { getUserAuthData, userActions } from "entities/User";
+
+import { LoginModal } from "features/AuthByUsername";
+
 import cls from "./Navbar.module.scss";
 
 interface NavbarProps {
@@ -39,7 +43,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }
 
   return (
-    <div className={classNames(cls.navbar, {}, [className])}>
+    <header className={classNames(cls.navbar, {}, [className])}>
       <Button
         onClick={handleShowModal}
         theme={ButtonTheme.CLEAR_INVERTED}
@@ -48,6 +52,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         {t("Войти")}
       </Button>
       {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={handleClose} />}
-    </div>
+    </header>
   );
 });

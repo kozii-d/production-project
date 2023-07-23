@@ -1,10 +1,13 @@
 import React from "react";
+
+import { action } from "@storybook/addon-actions";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "app/providers/ThemeProvider";
-import { action } from "@storybook/addon-actions";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+
+import { Theme } from "app/providers/ThemeProvider";
+
 import AddCommentForm from "./AddCommentForm";
 
 export default {

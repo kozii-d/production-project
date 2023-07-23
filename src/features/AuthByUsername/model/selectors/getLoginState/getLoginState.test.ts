@@ -1,7 +1,9 @@
 import { StateSchema } from "app/providers/StoreProvider";
-import { getLoginState } from "./getLoginState";
-import { LoginSchema } from "../../types/loginSchema";
+
 import { initialState } from "../../slice/loginSlice";
+import { LoginSchema } from "../../types/loginSchema";
+
+import { getLoginState } from "./getLoginState";
 
 describe("getLoginState.test", () => {
   test("Should return loginForm state when it is present", () => {

@@ -1,10 +1,12 @@
-import { classNames } from "shared/lib/classNames/classNames";
-
 import { memo } from "react";
-import { ArticleTextBlock } from "entities/Article/model/types/article";
+
+import { classNames } from "shared/lib/classNames/classNames";
 import {
   Text,
 } from "shared/ui/Text/Text";
+
+import { ArticleTextBlock } from "entities/Article/model/types/article";
+
 import cls from "./ArticleTextBlockComponent.module.scss";
 
 interface ArticleTextBlockComponentProps {

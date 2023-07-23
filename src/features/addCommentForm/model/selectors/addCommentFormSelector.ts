@@ -1,5 +1,7 @@
-import { StateSchema } from "app/providers/StoreProvider";
 import { createSelector } from "@reduxjs/toolkit";
+
+import { StateSchema } from "app/providers/StoreProvider";
+
 import { initialState } from "../slices/addCommentFormSlice";
 
 const getAddCommentFormState = (state: StateSchema) => state?.addCommentForm || initialState;

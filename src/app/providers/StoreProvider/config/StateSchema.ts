@@ -4,17 +4,19 @@ import {
   Reducer,
   ReducersMapObject,
 } from "@reduxjs/toolkit";
-import { CombinedState } from "redux";
 import { AxiosInstance } from "axios";
 import { NavigateOptions, To } from "react-router-dom";
+import { CombinedState } from "redux";
 
-import { CounterSchema } from "entities/Counter";
-import { UserSchema } from "entities/User";
-import { LoginSchema } from "features/AuthByUsername";
-import { ProfileSchema } from "entities/Profile";
 import { ArticleDetailsSchema } from "entities/Article";
-import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
+import { CounterSchema } from "entities/Counter";
+import { ProfileSchema } from "entities/Profile";
+import { UserSchema } from "entities/User";
+
+import { LoginSchema } from "features/AuthByUsername";
 import { AddCommentFormSchema } from "features/addCommentForm";
+
+import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
 import { ArticlesPageSchema } from "pages/ArticlesPage";
 
 export interface StateSchema {

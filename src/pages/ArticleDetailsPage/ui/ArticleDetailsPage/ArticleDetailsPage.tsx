@@ -1,27 +1,33 @@
-import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
-
 import {
   Suspense, useCallback,
 } from "react";
-import { ArticleDetails } from "entities/Article";
-import { useNavigate, useParams } from "react-router-dom";
-import { Text, TextAlign, TextTheme } from "shared/ui/Text/Text";
-import { CommentList } from "entities/Comment";
-import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { AddCommentForm } from "features/addCommentForm";
-import { Loader } from "shared/ui/Loader/Loader";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { useNavigate, useParams } from "react-router-dom";
+
 import { RoutePath } from "shared/config/routeConfig";
+import { classNames } from "shared/lib/classNames/classNames";
+import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { Loader } from "shared/ui/Loader/Loader";
+import { Page } from "shared/ui/Page/Page";
+import { Text, TextAlign, TextTheme } from "shared/ui/Text/Text";
+
+import { ArticleDetails } from "entities/Article";
 import { getArticleDetailsError } from "entities/Article/model/selectors/articleDetails";
-import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
-import cls from "./ArticleDetailsPage.module.scss";
-import { articleDetailsCommentsReducer, getArticleComments } from "../../model/slices/articleDetailsCommentsSlice";
+import { CommentList } from "entities/Comment";
+
+import { AddCommentForm } from "features/addCommentForm";
+
 import { getArticleCommentsIsAdding, getArticleCommentsIsLoading } from "../../model/selectors/comments";
+import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
+import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { articleDetailsCommentsReducer, getArticleComments } from "../../model/slices/articleDetailsCommentsSlice";
+
+import cls from "./ArticleDetailsPage.module.scss";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -82,7 +88,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
         <Button onClick={handleBackToList} theme={ButtonTheme.OUTLINE}>
           {t("Назад к списку")}
         </Button>
@@ -95,7 +101,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
           />
         </Suspense>
         <CommentList isLoading={commentsIsLoading} comments={comments} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

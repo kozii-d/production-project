@@ -1,8 +1,10 @@
-import { Profile } from "entities/Profile";
 import { TestAsyncThunk } from "shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
-import { Currency } from "entities/Currency";
+
 import { Country } from "entities/Country";
+import { Currency } from "entities/Currency";
+import { Profile } from "entities/Profile";
 import { ValidateProfileError } from "entities/Profile/model/types/profile";
+
 import { updateProfileData } from "./updateProfileData";
 
 const profileData: Profile = {

@@ -1,6 +1,7 @@
 import React, {
   FC, ReactNode, useEffect, useMemo, useState,
 } from "react";
+
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from "../lib/ThemeContext";
 
 // localStorage возвращает строку и с помощью as мы преобразовываем строку к типу Theme

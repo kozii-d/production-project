@@ -1,6 +1,7 @@
-import { LoginSchema } from "../types/loginSchema";
-import { initialState, loginActions, loginReducer } from "./loginSlice";
 import { loginByUsername } from "../services/loginByUsername/loginByUsername";
+import { LoginSchema } from "../types/loginSchema";
+
+import { initialState, loginActions, loginReducer } from "./loginSlice";
 
 describe("loginSlice", () => {
   test("should return the initial state", () => {

@@ -1,10 +1,13 @@
 import { memo, useCallback } from "react";
+
 import { classNames } from "shared/lib/classNames/classNames";
 
 import { ArticleListItemSkeleton } from "entities/Article/ui/ArticleListItem/ArticleListItemSkeleton";
-import cls from "./ArticleList.module.scss";
+
 import { Article, ArticleView } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
+
+import cls from "./ArticleList.module.scss";
 
 interface ArticleListProps {
   className?: string;
@@ -35,17 +38,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
     />
   ), [view]);
 
-  if (isLoading) {
-    return (
-      <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
-        {getSkeletons(view)}
-      </div>
-    );
-  }
-
   return (
     <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
       {articles.length > 0 ? articles.map(renderArticle) : null}
+      {isLoading && getSkeletons(view)}
     </div>
   );
 });

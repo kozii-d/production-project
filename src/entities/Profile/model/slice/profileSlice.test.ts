@@ -1,10 +1,12 @@
+import { Country } from "entities/Country";
+import { Currency } from "entities/Currency";
 import { Profile, ProfileSchema } from "entities/Profile";
 import { ValidateProfileError } from "entities/Profile/model/types/profile";
-import { Currency } from "entities/Currency";
-import { Country } from "entities/Country";
+
 import { updateProfileData } from "../service/updateProfileData/updateProfileData";
-import { profileActions, profileReducer } from "./profileSlice";
+
 import { initialState } from "./initialState";
+import { profileActions, profileReducer } from "./profileSlice";
 
 const profileData: Profile = {
   first: "John",
