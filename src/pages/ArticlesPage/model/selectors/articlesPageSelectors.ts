@@ -12,3 +12,4 @@ export const getArticlesPageView = createSelector(getArticlesPageState, (article
 export const getArticlesPageLimit = createSelector(getArticlesPageState, (articlesPage) => articlesPage.limit);
 export const getArticlesPageNumber = createSelector(getArticlesPageState, (articlesPage) => articlesPage.page);
 export const getArticlesPageHasMore = createSelector(getArticlesPageState, (articlesPage) => articlesPage.hasMore);
+export const getArticlesPageInited = createSelector(getArticlesPageState, (articlesPage) => articlesPage._inited);

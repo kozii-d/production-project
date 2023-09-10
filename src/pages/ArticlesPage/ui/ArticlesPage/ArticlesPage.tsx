@@ -10,13 +10,12 @@ import { Page } from "shared/ui/Page/Page";
 
 import { ArticleList, ArticleView, ArticleViewSelector } from "entities/Article";
 
-import { fetchNextArticlesPage } from "pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
-
 import {
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from "../../model/selectors/articlesPageSelectors";
-import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
+import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
+import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 import { articlesPageActions, articlesPageReducer, getArticles } from "../../model/slice/articlesPageSlice";
 
 import cls from "./ArticlesPage.module.scss";
@@ -46,12 +45,11 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticlesList({}));
+    dispatch(initArticlesPage());
   });
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page onScrollEnd={handleLoadNextPage} className={classNames(cls.articlesPage, {}, [className])}>
         <ArticleViewSelector view={view} onViewClick={handleChangeView} />
         <ArticleList isLoading={isLoading} view={view} articles={articles} />

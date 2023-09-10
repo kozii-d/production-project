@@ -33,6 +33,7 @@ const article: Article = {
   user: {
     id: "1",
     username: "kozii",
+    avatar: "https://avatarfiles.alphacoders.com/280/280985.png",
   },
   title: "JavaScript news",
   subtitle: "Что нового в JS за 2023 год?",
