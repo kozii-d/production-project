@@ -5,7 +5,7 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Loader } from "shared/ui/Loader/Loader";
 import { Modal } from "shared/ui/Modal/Modal";
 
-import { loginActions } from "../../model/slice/loginSlice";
+import { loginActions } from "../../model/slices/loginSlice";
 import { LoginFormAsync } from "../LoginForm/LoginForm.async";
 
 interface LoginModalProps {

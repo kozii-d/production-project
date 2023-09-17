@@ -11,7 +11,6 @@ import {
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { Page } from "shared/ui/Page/Page";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 
 import { Country } from "entities/Country";
@@ -28,6 +27,8 @@ import {
   profileReducer,
 } from "entities/Profile";
 import { ValidateProfileError } from "entities/Profile/model/types/profile";
+
+import { Page } from "widgets/Page/Page";
 
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
